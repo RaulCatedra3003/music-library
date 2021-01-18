@@ -5,7 +5,8 @@ export const home = () => {
   </header>
   <section class="searchBar">
     <select name="searchBar__select" id="searchBarSelect">
-      <option value="song" selected>Song</option>
+      <option value="default" selected>All</option>
+      <option value="song">Song</option>
       <option value="album">Album</option>
       <option value="artist">Artist</option>
       <option value="video">Music Video</option>
@@ -13,8 +14,8 @@ export const home = () => {
     <input type="text" id="nameToSearchInput">
     <section class="country">
       <input type="checkbox" id="countryCheckbox">
-      <label for="countrySelect">Country</label>
-      <select name="country__select" id="countrySelect"></select>
+      <label for="countriesSelect">Country</label>
+      <select name="country__select" id="countriesSelect"></select>
     </section>
     <section class="explicit">
       <label for="explicitCheckbox">Explicit Content</label>
@@ -23,7 +24,7 @@ export const home = () => {
     <section class="limit">
       <input type="checkbox" id="limitCheckbox">
       <label for="limitNumber">Limit</label>
-      <input type="number" id="limitNumber">
+      <input type="number" id="limitNumber" value="50">
     </section>
   </section>
   <section class="main-content">

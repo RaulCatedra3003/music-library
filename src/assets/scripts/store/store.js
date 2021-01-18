@@ -1,15 +1,15 @@
-import { getCountrys } from '../API-logic/get';
-import { addCountrys } from '../helpers/helpers';
+import { getCountries } from '../API-logic/get';
+import { addCountries } from '../helpers/helpers';
 import { home } from '../views/components/home';
 import { renderView } from '../views/renderviews';
 
 export const homeApp = () => {
   renderView(home);
-  getCountrys().done(data => {
-    renderView(addCountrys(data), '#countrySelect');
+  getCountries().done(data => {
+    renderView(addCountries(data), '#countriesSelect');
   });
 };
 
-export const filterDataList = function () {
-  console.log($(this).val());
+export const searchItem = () => {
+  //TODO llamar a get con createURL como parametro para la url y en el .done llamar a renderviews().
 };
