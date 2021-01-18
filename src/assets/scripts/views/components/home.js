@@ -1,0 +1,35 @@
+export const home = () => {
+  const template = `
+  <header class="header">
+    <h1 class="header__title">MUSIC LIBRARY</h1>
+  </header>
+  <section class="searchBar">
+    <select name="searchBar__select" id="searchBarSelect">
+      <option value="song" selected>Song</option>
+      <option value="album">Album</option>
+      <option value="artist">Artist</option>
+      <option value="video">Music Video</option>
+    </select>
+    <input type="text">
+    <section class="country">
+      <input type="checkbox" id="countryCheckbox">
+      <label for="countrySelect">Country</label>
+      <select name="country__select" id="countrySelect"></select>
+    </section>
+    <section class="explicit">
+      <label for="explicitInput">Explicit Content</label>
+      <input type="checkbox" id="explicitInput">
+    </section>
+    <section class="limit">
+      <input type="checkbox" id="limitCheckbox">
+      <label for="limitNumber">Limit</label>
+      <input type="number" id="limitNumber">
+    </section>
+  </section>
+  <section class="main-content">
+    <section class="content"></section>
+    <section class="fav"></section>
+  </section>`;
+
+  return template;
+};
