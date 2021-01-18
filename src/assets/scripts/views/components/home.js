@@ -10,7 +10,7 @@ export const home = () => {
       <option value="artist">Artist</option>
       <option value="video">Music Video</option>
     </select>
-    <input type="text">
+    <input type="text" id="nameToSearchInput">
     <section class="country">
       <input type="checkbox" id="countryCheckbox">
       <label for="countrySelect">Country</label>
