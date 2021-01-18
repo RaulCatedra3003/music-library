@@ -1,0 +1,38 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.header__title{
+  padding: 20px;
+  font-size: 28px;
+}
+
+.searchBar{
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.country, .explicit, .limit{
+  display: flex;
+  justify-content: center;
+}
+
+.main-content{
+  font-size: 22px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.fav {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  padding: 20px;
+}
