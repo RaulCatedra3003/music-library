@@ -1,5 +1,5 @@
-import { status } from '../dispatcher/dispatcher';
-import { addEventListeners } from '../helpers/helpers';
+import { status } from '../actions/actions';
+import { addEventListeners } from '../dispacher/dispacher';
 
 export const renderView = (fragment, element = '#root') => {
   $(element).html(fragment);

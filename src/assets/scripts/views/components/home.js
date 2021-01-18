@@ -17,8 +17,8 @@ export const home = () => {
       <select name="country__select" id="countrySelect"></select>
     </section>
     <section class="explicit">
-      <label for="explicitInput">Explicit Content</label>
-      <input type="checkbox" id="explicitInput">
+      <label for="explicitCheckbox">Explicit Content</label>
+      <input type="checkbox" id="explicitCheckbox">
     </section>
     <section class="limit">
       <input type="checkbox" id="limitCheckbox">

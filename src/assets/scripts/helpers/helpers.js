@@ -7,11 +7,3 @@ export const addCountrys = data => {
   });
   return fragment;
 };
-
-export const addEventListeners = status => {
-  $(document).off().find('*').off();
-  switch (status) {
-    case 'home':
-      $('#nameToSearchInput').on('change', showDataList);
-  }
-};
