@@ -15,7 +15,8 @@ export const homeApp = () => {
 export const searchItem = () => {
   getItems(createUrl()).done(data => {
     console.log("peticion realizada correctamente");
-    renderView(createList(data, post), '#content');
+    console.log(JSON.parse(data).results);
+    renderView(createList(JSON.parse(data).results, post), '#content');
     //TODO llamar a renderviews().
   }).fail(() => {
     alert("Pais selectionado no tiene itunes");
