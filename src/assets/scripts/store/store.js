@@ -2,7 +2,7 @@ import { getCountries, getItems } from '../API-logic/get';
 import { createList, createUrl } from '../helpers/helpers';
 import { home } from '../views/components/home';
 import { option } from '../views/components/option';
-import { post } from '../views/components/post';
+import { postSong } from '../views/components/posts/postSong';
 import { renderView } from '../views/renderviews';
 
 export const homeApp = () => {
@@ -15,10 +15,23 @@ export const homeApp = () => {
 export const searchItem = () => {
   getItems(createUrl())
     .done(data => {
-      renderView(
-        createList(JSON.parse(data).results, post, $('#searchBarSelect').val()),
-        '#content',
-      );
+      switch ($('#searchBarSelect').val()) {
+        case 'song':
+          renderView(
+            createList(JSON.parse(data).results, postSong),
+            '#content',
+          );
+          break;
+        case 'album':
+          console.log('albums');
+          break;
+        case 'musicArtist':
+          console.log('artists');
+          break;
+        case 'musicVideo':
+          console.log('videos');
+          break;
+      }
     })
     .fail(() => {
       alert('Pais selectionado no tiene itunes');
