@@ -1,42 +1,46 @@
+/* General styles */
 body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0px auto;
   text-align: center;
 }
+button {
+  min-width: 44px;
+  min-height: 44px;
+}
 
-.header__title{
+/* Home styles */
+.header__title {
   padding: 20px;
   font-size: 28px;
 }
-
-.searchBar{
+.searchBar {
   border: 1px solid black;
   padding: 20px;
 }
-
-.country, .explicit, .limit{
+.country,
+.explicit,
+.limit {
   display: flex;
   justify-content: center;
 }
-
-.main-content{
+.main-content {
   font-size: 22px;
 }
-
 .content {
   display: flex;
   flex-direction: column;
   border: 1px solid black;
   padding: 20px;
 }
-
 .fav {
   display: flex;
   flex-direction: row;
   border: 1px solid black;
   padding: 20px;
 }
-
-.post-item{
+.post-item {
   display: flex;
 }
+
+/* Post styles */

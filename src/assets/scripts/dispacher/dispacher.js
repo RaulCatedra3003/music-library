@@ -1,6 +1,8 @@
 import { goSearch } from '../helpers/helpers';
 import { deletePosts } from '../store/store';
 
+let timeoutIds = [];
+
 export const addEventListeners = status => {
   $(document).off().find('*').off();
   switch (status) {
@@ -17,9 +19,12 @@ export const addEventListeners = status => {
 };
 
 export const checkFilter = () => {
-  window.clearTimeout(goSearch);
+  timeoutIds.forEach(e => {
+    window.clearTimeout(e);
+  });
   if ($(nameToSearchInput).val() !== '') {
-    setTimeout(goSearch, 300);
+    const timeoutID = setTimeout(goSearch, 300);
+    timeoutIds.push(timeoutID);
   } else {
     deletePosts();
   }
