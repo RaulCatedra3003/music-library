@@ -44,3 +44,11 @@ button {
 }
 
 /* Post styles */
+
+/*Columns*/
+.col-5{
+  width: 20%;
+  height: 10vh;
+  overflow: hidden;
+  margin: 2px;
+}
