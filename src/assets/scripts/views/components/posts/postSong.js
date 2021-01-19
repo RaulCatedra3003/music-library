@@ -22,7 +22,7 @@ export const postSong = ({
         <p class="post-item__artist">Artist: ${artistName}</p>
         <p class="post-item__album">Album: ${collectionName}</p>
         <p class="post-item__genre">Genre: ${primaryGenreName}</p>
-        <p class="post-item__length">Duration: ${durationMin}:${durationSec}</p>
+        <p class="post-item__length">Duration: ${durationMin}:${(durationSec<10)? "0"+durationSec : durationSec}</p>
         <p class="post-item__release">Release: ${date}</p>
       </section>
       <section class="col-3">
