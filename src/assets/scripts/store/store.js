@@ -9,6 +9,7 @@ import { postArtist } from '../views/components/posts/postArtist';
 import { postSong } from '../views/components/posts/postSong';
 import { postVideo } from '../views/components/posts/postVideo';
 import { renderView } from '../views/renderviews';
+import { turnClickedCard } from '../views/turnclickedcard';
 
 export const homeApp = () => {
   renderView(home);
@@ -57,4 +58,9 @@ export const searchItem = () => {
 
 export const deletePosts = () => {
   renderView('', '#content');
+};
+
+export const showModal = e => {
+  e.preventDefault();
+  turnClickedCard(e);
 };

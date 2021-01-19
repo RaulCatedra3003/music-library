@@ -1,5 +1,5 @@
-import { goSearch, showModal } from '../helpers/helpers';
-import { deletePosts } from '../store/store';
+import { goSearch } from '../helpers/helpers';
+import { deletePosts, showModal } from '../store/store';
 
 let timeoutIds = [];
 
