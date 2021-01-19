@@ -1,11 +1,12 @@
-import { searchItem } from '../store/store';
+import { goSearch } from '../helpers/helpers';
+import { deletePosts } from '../store/store';
 
 export const addEventListeners = status => {
   $(document).off().find('*').off();
   switch (status) {
     case 'home':
       $('#searchBarSelect').on('change', checkFilter);
-      $('#nameToSearchInput').on('input', checkFilter);
+      $('#nameToSearchInput').on('keyup', checkFilter);
       $('#countryCheckbox').on('click', checkFilter);
       $('#countriesSelect').on('change', checkFilter);
       $('#explicitCheckbox').on('click', checkFilter);
@@ -16,9 +17,10 @@ export const addEventListeners = status => {
 };
 
 export const checkFilter = () => {
+  window.clearTimeout(goSearch);
   if ($(nameToSearchInput).val() !== '') {
-    searchItem();
+    setTimeout(goSearch, 300);
   } else {
-    //TODO incluir mensaje de error
+    deletePosts();
   }
 };

@@ -1,3 +1,4 @@
+import { searchItem } from '../store/store';
 import { option } from '../views/components/option';
 import { post } from '../views/components/post';
 
@@ -15,10 +16,16 @@ export const createUrl = () => {
   ).val()}`;
   if ($('#countryCheckbox').prop('checked')) {
     url = url + `&country=${$('#countriesSelect').val()}`;
-  }if (!$('#explicitCheckbox').prop('checked')) {
+  }
+  if (!$('#explicitCheckbox').prop('checked')) {
     url = url + `&explicit=no`;
-  }if ($('#limitCheckbox').prop('checked')) {
+  }
+  if ($('#limitCheckbox').prop('checked')) {
     url = url + `&limit=${$('#limitNumber').val()}`;
   }
   return url;
+};
+
+export const goSearch = () => {
+  searchItem();
 };
