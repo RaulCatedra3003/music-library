@@ -8,7 +8,13 @@ button {
   min-width: 44px;
   min-height: 44px;
 }
-
+a{
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* Home styles */
 .header__title {
   padding: 20px;
@@ -42,42 +48,37 @@ button {
 }
 
 /* Post styles */
-.col-5 {
-  width: 20%;
-  margin: 2px;
-  font-size: 0.8em;
-}
 .post-item {
   border: 1px solid black;
   border-radius: 10px;
   width: 95%;
-  height: 60px;
+  height: 120px;
   margin: 5px 0;
   font-size: 0.5em;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 .post-item__img {
   background-repeat: no-repeat;
-  height: 44px;
-  width: 44px;
+  height: 100px;
+  width: auto;
   margin-left: 5px;
 }
 .post-item__play {
-  margin-right: 5px;
-  width: 44px;
-  height: 44px;
+  border: none;
+  background-color: transparent;
+  font-size: 2em;
 }
-.post-item__name {
-  overflow: auto;
+.post-item__icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.post-item__artist {
-  overflow: auto;
+.col-3{
+  width: 25%;
 }
-.post-item__album {
-  overflow: auto;
+.col-6{
+  width: 50%;
 }
-
 /* Media querys styles */
