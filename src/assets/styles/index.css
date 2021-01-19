@@ -31,7 +31,8 @@ button {
   display: flex;
   flex-direction: column;
   border: 1px solid black;
-  padding: 20px;
+  align-items: center;
+  justify-content: center;
 }
 .fav {
   display: flex;
@@ -39,16 +40,36 @@ button {
   border: 1px solid black;
   padding: 20px;
 }
-.post-item {
-  display: flex;
-}
 
 /* Post styles */
-
-/*Columns*/
-.col-5{
+.col-5 {
   width: 20%;
   height: 10vh;
   overflow: hidden;
   margin: 2px;
+  font-size: 0.8em;
 }
+.post-item {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 95%;
+  height: fit-content;
+  margin: 5px 0;
+  font-size: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.post-item__img {
+  background-repeat: no-repeat;
+  height: 44px;
+  width: 44px;
+  margin-left: 5px;
+}
+.post-item__play {
+  margin-right: 5px;
+  width: 44px;
+  height: 44px;
+}
+
+/* Media querys styles */
