@@ -15,9 +15,9 @@ export const createUrl = () => {
   ).val()}`;
   if ($('#countryCheckbox').prop('checked')) {
     url = url + `&country=${$('#countriesSelect').val()}`;
-  } else if (!$('#explicitCheckbox').prop('checked')) {
+  }if (!$('#explicitCheckbox').prop('checked')) {
     url = url + `&explicit=no`;
-  } else if ($('#limitCheckbox').prop('checked')) {
+  }if ($('#limitCheckbox').prop('checked')) {
     url = url + `&limit=${$('#limitNumber').val()}`;
   }
   return url;
