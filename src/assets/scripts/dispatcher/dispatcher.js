@@ -1,4 +1,4 @@
-import { goSearch } from '../helpers/helpers';
+import { goSearch, showModal } from '../helpers/helpers';
 import { deletePosts } from '../store/store';
 
 let timeoutIds = [];
@@ -15,6 +15,15 @@ export const addEventListeners = status => {
       $('#limitCheckbox').on('click', checkFilter);
       $('#limitNumber').on('input', checkFilter);
       break;
+    case 'songs':
+      $('#searchBarSelect').on('change', checkFilter);
+      $('#nameToSearchInput').on('keyup', checkFilter);
+      $('#countryCheckbox').on('click', checkFilter);
+      $('#countriesSelect').on('change', checkFilter);
+      $('#explicitCheckbox').on('click', checkFilter);
+      $('#limitCheckbox').on('click', checkFilter);
+      $('#limitNumber').on('input', checkFilter);
+      $('.post-item__img').on('click', showModal);
   }
 };
 

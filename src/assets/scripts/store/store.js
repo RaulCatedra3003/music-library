@@ -1,4 +1,6 @@
+import { status } from '../actions/actions';
 import { getCountries, getItems } from '../API-logic/get';
+import { addEventListeners } from '../dispatcher/dispatcher';
 import { createList, createUrl } from '../helpers/helpers';
 import { home } from '../views/components/home';
 import { option } from '../views/components/option';
@@ -23,6 +25,7 @@ export const searchItem = () => {
           renderView(
             createList(JSON.parse(data).results, postSong),
             '#content',
+            (status.page = 'songs'),
           );
           break;
         case 'album':
@@ -44,6 +47,7 @@ export const searchItem = () => {
           );
           break;
       }
+      addEventListeners(status.page);
     })
     .fail(() => {
       alert('Pais selectionado no tiene itunes');

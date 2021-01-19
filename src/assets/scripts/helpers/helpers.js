@@ -1,3 +1,4 @@
+import { status } from '../actions/actions';
 import { searchItem } from '../store/store';
 
 export const createList = (data, component) => {
@@ -26,4 +27,36 @@ export const createUrl = () => {
 
 export const goSearch = () => {
   searchItem();
+};
+
+export const showModal = e => {
+  e.preventDefault();
+  //TODO ver la forma de que se de la vuelta el que este bien y podamos cambiar el estado del data-position
+  $('.post-item').each((index, element) => {
+    if ($(element).data('position') === 'back') {
+      $(element).css({ transform: '' });
+      $(element).children('.post-item__img').css('transform', '');
+      $(element).children('.post-item__front').fadeIn();
+      $(element).children('.post-item__back').fadeOut();
+    }
+  });
+  switch ($(e.target).parent().data('position')) {
+    case 'front':
+      $(e.target).parent().data('position', 'back');
+      $(e.target).parent().css({
+        transform: 'rotateY(180deg)',
+        transition: 'transform 0.5s linear',
+      });
+      $(e.target).css('transform', 'rotateY(180deg)');
+      $(e.target).parent().children('.post-item__front').fadeOut();
+      $(e.target).parent().children('.post-item__back').fadeIn();
+      break;
+    case 'back':
+      $(e.target).parent().data('position', 'front');
+      $(e.target).parent().css('transform', '');
+      $(e.target).css('transform', '');
+      $(e.target).parent().children('.post-item__front').fadeIn();
+      $(e.target).parent().children('.post-item__back').fadeOut();
+      break;
+  }
 };

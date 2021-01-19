@@ -1,3 +1,10 @@
+/* Color variables */
+:root {
+  --white: #f8f1f1;
+  --sea-blue: #11698e;
+  --marine-blue: #19456b;
+  --green: #16c79a;
+}
 /* General styles */
 body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -8,12 +15,13 @@ button {
   min-width: 44px;
   min-height: 44px;
 }
-a{
+a {
   min-width: 44px;
   min-height: 44px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
 /* Home styles */
 .header__title {
@@ -35,10 +43,11 @@ a{
 }
 .content {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   border: 1px solid black;
   align-items: center;
   justify-content: center;
+  background-color: var(--green);
 }
 .fav {
   display: flex;
@@ -49,36 +58,82 @@ a{
 
 /* Post styles */
 .post-item {
-  border: 1px solid black;
   border-radius: 10px;
-  width: 95%;
-  height: 120px;
-  margin: 5px 0;
+  width: 125px;
+  height: 240px;
+  margin: 5px 5px;
   font-size: 0.5em;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  background-color: var(--white);
+  position: relative;
 }
 .post-item__img {
   background-repeat: no-repeat;
   height: 100px;
-  width: auto;
-  margin-left: 5px;
+  width: 100px;
+  margin: 12px 0 5px 0;
+  border-radius: 10px;
 }
-.post-item__play {
+.post-item__principal-data {
+  text-align: left;
+  width: 100px;
+}
+.post-item__name {
+  color: var(--marine-blue);
+  margin: 3px 0;
+  font-size: 1.1em;
+  font-weight: bold;
+  overflow-wrap: break-word;
+  max-height: 20px;
+  overflow: scroll;
+}
+.post-item__artist {
+  margin: 3px 0;
+  color: var(--sea-blue);
+  max-height: 20px;
+  overflow: scroll;
+}
+.post-item__overflow-data {
+  overflow: scroll;
+  max-height: 30px;
+  margin-top: 5px;
+}
+.post-item__album {
+  margin: 5px 0;
+}
+.post-item__price {
+  margin: 5px 0;
+}
+.bx {
   border: none;
   background-color: transparent;
   font-size: 2em;
 }
-.post-item__icons{
+.bxs-music {
+  color: var(--sea-blue);
+}
+.post-item__icons {
+  position: absolute;
+  bottom: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.col-3{
-  width: 25%;
+/* .modal {
+  position: absolute;
+} */
+/* .animate-back {
+  transform: rotateY(180deg);
+  transition: transform 0.5s linear;
 }
-.col-6{
-  width: 50%;
+.animate-front {
+  transform: rotateY(-180deg);
+  transition: transform 0.5s linear;
+} */
+.post-item__back {
+  display: none;
+  transform: rotateY(180deg);
 }
 /* Media querys styles */
