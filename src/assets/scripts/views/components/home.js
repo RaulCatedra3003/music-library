@@ -7,8 +7,8 @@ export const home = () => {
     <select name="searchBar__select" id="searchBarSelect">
       <option value="song" selected>Song</option>
       <option value="album">Album</option>
-      <option value="artist">Artist</option>
-      <option value="video">Music Video</option>
+      <option value="musicArtist">Artist</option>
+      <option value="musicVideo">Music Video</option>
     </select>
     <input type="text" id="nameToSearchInput">
     <section class="country">
@@ -27,7 +27,7 @@ export const home = () => {
     </section>
   </section>
   <section class="main-content">
-    <section class="content"></section>
+    <section class="content" id="content"></section>
     <section class="fav"></section>
   </section>`;
 

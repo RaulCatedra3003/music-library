@@ -1,18 +1,24 @@
 import { getCountries, getItems } from '../API-logic/get';
-import { addCountries, createUrl } from '../helpers/helpers';
+import { createList, createUrl } from '../helpers/helpers';
 import { home } from '../views/components/home';
+import { option } from '../views/components/option';
+import { post } from '../views/components/post';
 import { renderView } from '../views/renderviews';
 
 export const homeApp = () => {
   renderView(home);
   getCountries().done(data => {
-    renderView(addCountries(data), '#countriesSelect');
+    renderView(createList(data, option), '#countriesSelect');
   });
 };
 
 export const searchItem = () => {
   getItems(createUrl()).done(data => {
-    console.log(data);
-    //TODO llamar a renderviews() si la respuesta del server es 200OK, en otra respuesta mensaje de error.
-  });
+    console.log("peticion realizada correctamente");
+    renderView(createList(data, post), '#content');
+    //TODO llamar a renderviews().
+  }).fail(() => {
+    alert("Pais selectionado no tiene itunes");
+    //TODO incluir mensaje de error en lugar del alert
+  })
 };
