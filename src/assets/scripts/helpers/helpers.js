@@ -1,6 +1,4 @@
 import { searchItem } from '../store/store';
-import { option } from '../views/components/option';
-import { postSong } from '../views/components/posts/postSong';
 
 export const createList = (data, component) => {
   const fragment = $(document.createDocumentFragment());

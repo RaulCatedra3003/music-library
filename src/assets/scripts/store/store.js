@@ -2,7 +2,10 @@ import { getCountries, getItems } from '../API-logic/get';
 import { createList, createUrl } from '../helpers/helpers';
 import { home } from '../views/components/home';
 import { option } from '../views/components/option';
+import { postAlbum } from '../views/components/posts/postAlbum';
+import { postArtist } from '../views/components/posts/postArtist';
 import { postSong } from '../views/components/posts/postSong';
+import { postVideo } from '../views/components/posts/postVideo';
 import { renderView } from '../views/renderviews';
 
 export const homeApp = () => {
@@ -23,13 +26,22 @@ export const searchItem = () => {
           );
           break;
         case 'album':
-          console.log('albums');
+          renderView(
+            createList(JSON.parse(data).results, postAlbum),
+            '#content',
+          );
           break;
         case 'musicArtist':
-          console.log('artists');
+          renderView(
+            createList(JSON.parse(data).results, postArtist),
+            '#content',
+          );
           break;
         case 'musicVideo':
-          console.log('videos');
+          renderView(
+            createList(JSON.parse(data).results, postVideo),
+            '#content',
+          );
           break;
       }
     })

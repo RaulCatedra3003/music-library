@@ -17,6 +17,7 @@ export const postAlbum = ({
       <p class="post-item__songs-number">Number of songs: ${trackCount}</p>
       <p class="post-item__release">Release date: ${releaseDate}</p>
       <p class="post-item__genre">Genre: ${primaryGenreName}</p>
+      <button class="post-item__fav"></button>
     </section>`;
   return template;
 };

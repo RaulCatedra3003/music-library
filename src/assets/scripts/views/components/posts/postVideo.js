@@ -19,8 +19,9 @@ export const postVideo = ({
       <p class="post-item__release">Release date: ${releaseDate}</p>
       <p class="post-item__length">Song length: ${trackTimeMillis}</p>
       <p class="post-item__genre">Genre: ${primaryGenreName}</p>
-      <a class="post-item__link" href=${trackViewUrl}></a>
+      <a class="post-item__link" href=${trackViewUrl}>Itunes link</a>
       <button class="post-item__play" data-preview=${previewUrl}></button>
+      <button class="post-item__fav"></button>
     </section>`;
   return template;
 };
