@@ -1,5 +1,10 @@
-export const post = ({artworkUrl100, trackName, artistName, collectionName}) =>{
-  const template =`
+export const post = ({
+  artworkUrl100,
+  trackName,
+  artistName,
+  collectionName,
+}) => {
+  const template = `
     <section class="post-item">
       <section class="post-item__img col-5" style="background-image: url(${artworkUrl100})"></section>
       <p class="post-item__name col-5">name: ${trackName}</p>
@@ -9,4 +14,4 @@ export const post = ({artworkUrl100, trackName, artistName, collectionName}) =>{
     </section>
   `;
   return template;
-}
+};

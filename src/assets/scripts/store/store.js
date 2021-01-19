@@ -15,7 +15,10 @@ export const homeApp = () => {
 export const searchItem = () => {
   getItems(createUrl())
     .done(data => {
-      renderView(createList(JSON.parse(data).results, post), '#content');
+      renderView(
+        createList(JSON.parse(data).results, post, $('#searchBarSelect').val()),
+        '#content',
+      );
     })
     .fail(() => {
       alert('Pais selectionado no tiene itunes');
