@@ -1,5 +1,5 @@
-import { getCountries } from '../API-logic/get';
-import { addCountries } from '../helpers/helpers';
+import { getCountries, getItems } from '../API-logic/get';
+import { addCountries, createUrl } from '../helpers/helpers';
 import { home } from '../views/components/home';
 import { renderView } from '../views/renderviews';
 
@@ -11,5 +11,8 @@ export const homeApp = () => {
 };
 
 export const searchItem = () => {
-  //TODO llamar a get con createURL como parametro para la url y en el .done llamar a renderviews().
+  getItems(createUrl()).done(data => {
+    console.log(data);
+    //TODO llamar a renderviews() si la respuesta del server es 200OK, en otra respuesta mensaje de error.
+  });
 };

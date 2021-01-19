@@ -6,3 +6,12 @@ export const getCountries = () => {
 
   return $.ajax(settings);
 };
+
+export const getItems = url => {
+  var settings = {
+    url: `https://itunes.apple.com/search${url}`,
+    method: 'GET',
+  };
+
+  return $.ajax(settings);
+};

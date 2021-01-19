@@ -5,8 +5,7 @@ export const home = () => {
   </header>
   <section class="searchBar">
     <select name="searchBar__select" id="searchBarSelect">
-      <option value="default" selected>All</option>
-      <option value="song">Song</option>
+      <option value="song" selected>Song</option>
       <option value="album">Album</option>
       <option value="artist">Artist</option>
       <option value="video">Music Video</option>
@@ -19,7 +18,7 @@ export const home = () => {
     </section>
     <section class="explicit">
       <label for="explicitCheckbox">Explicit Content</label>
-      <input type="checkbox" id="explicitCheckbox">
+      <input type="checkbox" id="explicitCheckbox" checked>
     </section>
     <section class="limit">
       <input type="checkbox" id="limitCheckbox">

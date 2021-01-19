@@ -9,10 +9,16 @@ export const addCountries = data => {
 };
 
 export const createUrl = () => {
-  console.log('creamos la url y la retornamos');
   let url = `?term=${$('#nameToSearchInput').val()}&entity=${$(
     '#searchBarSelect',
   ).val()}`;
-  //TODO comprobar los checkbox y terminar la url dependiendo de si estan marcados o no.
+  if ($('#countryCheckbox').prop('checked')) {
+    url = url + `&country=${$('#countriesSelect').val()}`;
+  } else if (!$('#explicitCheckbox').prop('checked')) {
+    console.log('no esta checked');
+    url = url + `&explicit=No`;
+  } else if ($('#limitCheckbox').prop('checked')) {
+    url = url + `&limit=${$('#limitNumber').val()}`;
+  }
   return url;
 };

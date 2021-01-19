@@ -1,4 +1,4 @@
-import { createUrl } from '../helpers/helpers';
+import { searchItem } from '../store/store';
 
 export const addEventListeners = status => {
   $(document).off().find('*').off();
@@ -16,8 +16,8 @@ export const addEventListeners = status => {
 };
 
 export const checkFilter = () => {
-  if (!$(nameToSearchInput).val() === '') {
-    searchItems();
+  if ($(nameToSearchInput).val() !== '') {
+    searchItem();
   } else {
     //TODO incluir mensaje de error
   }
