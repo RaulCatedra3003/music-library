@@ -10,6 +10,7 @@ import { postSong } from '../views/components/posts/postSong';
 import { postVideo } from '../views/components/posts/postVideo';
 import { renderView } from '../views/renderviews';
 import { turnClickedCard } from '../views/turnclickedcard';
+import { favourite } from '../views/components/favourite';
 
 export const homeApp = () => {
   renderView(home);
@@ -25,6 +26,8 @@ export const changePage = (e) =>{
       });
       break;
     case "favourite":
+      status.page = "favourites";
+      renderView(favourite, "#contentRoot");
       break;
   }
 }

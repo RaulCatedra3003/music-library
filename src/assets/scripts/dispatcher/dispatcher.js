@@ -9,10 +9,10 @@ export const addEventListeners = status => {
   $(document).off().find('*').off();
   switch (status) {
     case 'home':
-      $('.selectPage').on('click', changePage);
+      $('.search-radio__select-page').on('click', changePage);
       break;
     case 'search':
-      $('.selectPage').on('click', changePage);
+      $('.search-radio__select-page').on('click', changePage);
       $('#filterCheckbox').on('click', showFilterOptions);
       $('#searchBarSelect').on('change', checkFilter);
       $('#nameToSearchInput').on('keyup', checkFilter);
@@ -22,7 +22,7 @@ export const addEventListeners = status => {
       $('#limitCheckbox').on('click', checkFilter);
       $('#limitNumber').on('input', checkFilter);
     case 'songs':
-      $('.selectPage').on('click', changePage);
+      $('.search-radio__select-page').on('click', changePage);
       $('#filterCheckbox').on('click', showFilterOptions);
       $('#searchBarSelect').on('change', checkFilter);
       $('#nameToSearchInput').on('keyup', checkFilter);
@@ -34,7 +34,7 @@ export const addEventListeners = status => {
       $('.post-item__img').on('click', showModal);
       break;
     case 'albums':
-      $('.selectPage').on('click', changePage);
+      $('.search-radio__select-page').on('click', changePage);
       $('#filterCheckbox').on('click', showFilterOptions);
       $('#searchBarSelect').on('change', checkFilter);
       $('#nameToSearchInput').on('keyup', checkFilter);
@@ -46,7 +46,7 @@ export const addEventListeners = status => {
       $('.post-item__img').on('click', showModal);
       break;
     case 'videos':
-      $('.selectPage').on('click', changePage);
+      $('.search-radio__select-page').on('click', changePage);
       $('#filterCheckbox').on('click', showFilterOptions);
       $('#searchBarSelect').on('change', checkFilter);
       $('#nameToSearchInput').on('keyup', checkFilter);
@@ -56,6 +56,9 @@ export const addEventListeners = status => {
       $('#limitCheckbox').on('click', checkFilter);
       $('#limitNumber').on('input', checkFilter);
       $('.post-item__vid').on('click', showModal);
+      break;
+    case 'favourites':
+      $('.search-radio__select-page').on('click', changePage);
       break;
   }
 };

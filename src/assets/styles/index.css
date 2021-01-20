@@ -74,7 +74,7 @@ input{
   background-color: var(--sea-blue);
   text-align: left;
 }
-.searchRadio{
+.search-radio{
   margin: 5px;
 }
 input[type='radio']:after {
@@ -311,6 +311,13 @@ input:checked + .slider:before {
 .filter__content{
   display: none;
 }
+
+/*Favourites page style*/
+.favourite-radio{
+  padding: 20px;
+  background-color: rgba(22, 199, 154,0.1);
+}
+
 /* Media querys styles */
 @media screen and (min-width: 1470px) {
   .content {
