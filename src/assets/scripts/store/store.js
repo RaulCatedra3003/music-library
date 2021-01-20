@@ -75,7 +75,6 @@ export const searchItem = () => {
     })
     .fail(() => {
       alert('Pais selectionado no tiene itunes');
-      //TODO incluir mensaje de error en lugar del alert
     });
 };
 
