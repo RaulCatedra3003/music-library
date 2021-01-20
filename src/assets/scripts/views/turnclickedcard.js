@@ -12,12 +12,14 @@ export const turnClickedCard = e => {
         transform: 'rotateY(180deg)',
         transition: 'transform 0.5s linear',
       });
+      target.addClass('pseudo');
       target.css('transform', 'rotateY(180deg)');
       parent.children('.post-item__front').fadeOut();
       parent.children('.post-item__back').fadeIn();
       break;
     case 'back':
       stopAudio();
+      target.removeClass('pseudo');
       parent.data('position', 'front');
       parent.css('transform', '');
       target.css('transform', '');
