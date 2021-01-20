@@ -48,7 +48,6 @@ export const searchItem = () => {
           );
           break;
       }
-      addEventListeners(status.page);
     })
     .fail(() => {
       alert('Pais selectionado no tiene itunes');
