@@ -23,10 +23,10 @@ export const searchItem = () => {
     .done(data => {
       switch ($('#searchBarSelect').val()) {
         case 'song':
+          status.page = 'songs';
           renderView(
             createList(JSON.parse(data).results, postSong),
             '#content',
-            (status.page = 'songs'),
           );
           break;
         case 'album':
