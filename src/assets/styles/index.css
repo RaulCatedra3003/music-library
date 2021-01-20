@@ -32,6 +32,13 @@ audio {
   position: relative;
   left: -7px;
 }
+video {
+  width: 123px;
+  border-radius: 10px;
+  position: relative;
+  left: -11px;
+  bottom: -1px;
+}
 
 /* Home styles */
 .header__title {

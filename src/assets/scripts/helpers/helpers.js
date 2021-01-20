@@ -32,4 +32,7 @@ export const stopAudio = () => {
   $('audio').each(function () {
     this.pause();
   });
+  $('video').each(function () {
+    this.pause();
+  });
 };

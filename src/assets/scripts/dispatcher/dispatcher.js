@@ -28,7 +28,7 @@ export const addEventListeners = status => {
     case 'albums':
       $('.post-item__img').on('click', showModal);
     case 'videos':
-      $('.post-item__img').on('click', showModal);
+      $('.post-item__vid').on('click', showModal);
   }
 };
 
