@@ -1,4 +1,4 @@
-export const home =() =>{
+export const home = () => {
   const template = `
   <header class="header">
     <h1 class="header__title">MUSIC LIBRARY</h1>
@@ -12,5 +12,4 @@ export const home =() =>{
   <section id="contentRoot"></section>
   `;
   return template;
-}
-/* <section class="fav"></section> */
+};
