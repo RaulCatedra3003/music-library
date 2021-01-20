@@ -27,14 +27,14 @@ export const homeApp = () => {
 export const changePage = e => {
   switch ($(e.target).val()) {
     case 'search':
-      status.page = 'search';
+      status.subpage = 'search';
       renderView(search, '#contentRoot');
       getCountries().done(data => {
         renderView(createList(data, option), '#countriesSelect');
       });
       break;
     case 'favourite':
-      status.page = 'favourites';
+      status.subpage = 'favourites';
       renderView(favourite, '#contentRoot');
       break;
   }
@@ -44,28 +44,28 @@ export const searchItem = () => {
     .done(data => {
       switch ($('#searchBarSelect').val()) {
         case 'song':
-          status.page = 'songs';
+          status.postType = 'songs';
           renderView(
             createList(JSON.parse(data).results, postSong),
             '#content',
           );
           break;
         case 'album':
-          status.page = 'albums';
+          status.postType = 'albums';
           renderView(
             createList(JSON.parse(data).results, postAlbum),
             '#content',
           );
           break;
         case 'musicArtist':
-          status.page = 'artists';
+          status.postType = 'artists';
           renderView(
             createList(JSON.parse(data).results, postArtist),
             '#content',
           );
           break;
         case 'musicVideo':
-          status.page = 'videos';
+          status.postType = 'videos';
           renderView(
             createList(JSON.parse(data).results, postVideo),
             '#content',
@@ -116,19 +116,19 @@ export const showFavPosts = e => {
   const data = favPosts[$(e.target).data('type')];
   switch ($(e.target).data('type')) {
     case 'song':
-      status.page = 'favSongs';
+      status.postType = 'favSongs';
       renderView(createList(data, postSong), '#favRoot');
       break;
     case 'album':
-      status.page = 'favAlbums';
+      status.postType = 'favAlbums';
       renderView(createList(data, postAlbum), '#favRoot');
       break;
     case 'artist':
-      status.page = 'favArtists';
+      status.postType = 'favArtists';
       renderView(createList(data, postArtist), '#favRoot');
       break;
     case 'video':
-      status.page = 'favVideos';
+      status.postType = 'favVideos';
       renderView(createList(data, postVideo), '#favRoot');
       break;
   }

@@ -13,10 +13,8 @@ let timeoutIds = [];
 
 export const addEventListeners = status => {
   $(document).off().find('*').off();
-  switch (status) {
-    case 'home':
-      $('.search-radio__select-page').on('click', changePage);
-      break;
+  $('.search-radio__select-page').on('click', changePage);
+  switch (status.subpage) {
     case 'search':
       $('.search-radio__select-page').on('click', changePage);
       $('#filterCheckbox').on('click', showFilterOptions);
@@ -27,83 +25,48 @@ export const addEventListeners = status => {
       $('#explicitCheckbox').on('click', checkFilter);
       $('#limitCheckbox').on('click', checkFilter);
       $('#limitNumber').on('input', checkFilter);
-    case 'songs':
-      $('.search-radio__select-page').on('click', changePage);
-      $('#filterCheckbox').on('click', showFilterOptions);
-      $('#searchBarSelect').on('change', checkFilter);
-      $('#nameToSearchInput').on('keyup', checkFilter);
-      $('#countryCheckbox').on('click', checkFilter);
-      $('#countriesSelect').on('change', checkFilter);
-      $('#explicitCheckbox').on('click', checkFilter);
-      $('#limitCheckbox').on('click', checkFilter);
-      $('#limitNumber').on('input', checkFilter);
-      $('.post-item__img').on('click', showModal);
-      $('.post-item__fav').on('click', addPostToFav);
-      break;
-    case 'albums':
-      $('.search-radio__select-page').on('click', changePage);
-      $('#filterCheckbox').on('click', showFilterOptions);
-      $('#searchBarSelect').on('change', checkFilter);
-      $('#nameToSearchInput').on('keyup', checkFilter);
-      $('#countryCheckbox').on('click', checkFilter);
-      $('#countriesSelect').on('change', checkFilter);
-      $('#explicitCheckbox').on('click', checkFilter);
-      $('#limitCheckbox').on('click', checkFilter);
-      $('#limitNumber').on('input', checkFilter);
-      $('.post-item__img').on('click', showModal);
-      $('.post-item__fav').on('click', addPostToFav);
-      break;
-    case 'artists':
-      $('.search-radio__select-page').on('click', changePage);
-      $('#filterCheckbox').on('click', showFilterOptions);
-      $('#searchBarSelect').on('change', checkFilter);
-      $('#nameToSearchInput').on('keyup', checkFilter);
-      $('#countryCheckbox').on('click', checkFilter);
-      $('#countriesSelect').on('change', checkFilter);
-      $('#explicitCheckbox').on('click', checkFilter);
-      $('#limitCheckbox').on('click', checkFilter);
-      $('#limitNumber').on('input', checkFilter);
-      $('.post-item__fav').on('click', addPostToFav);
-      break;
-    case 'videos':
-      $('.search-radio__select-page').on('click', changePage);
-      $('#filterCheckbox').on('click', showFilterOptions);
-      $('#searchBarSelect').on('change', checkFilter);
-      $('#nameToSearchInput').on('keyup', checkFilter);
-      $('#countryCheckbox').on('click', checkFilter);
-      $('#countriesSelect').on('change', checkFilter);
-      $('#explicitCheckbox').on('click', checkFilter);
-      $('#limitCheckbox').on('click', checkFilter);
-      $('#limitNumber').on('input', checkFilter);
-      $('.post-item__vid').on('click', showModal);
-      $('.post-item__fav').on('click', addPostToFav);
+      switch (status.postType) {
+        case 'songs':
+          $('.post-item__img').on('click', showModal);
+          $('.post-item__fav').on('click', addPostToFav);
+          break;
+        case 'albums':
+          $('.post-item__img').on('click', showModal);
+          $('.post-item__fav').on('click', addPostToFav);
+          break;
+        case 'artists':
+          $('.post-item__fav').on('click', addPostToFav);
+          break;
+        case 'videos':
+          $('.post-item__vid').on('click', showModal);
+          $('.post-item__fav').on('click', addPostToFav);
+          break;
+        default:
+          break;
+      }
       break;
     case 'favourites':
       $('.search-radio__select-page').on('click', changePage);
       $('.favourite-radio__page').on('click', showFavPosts);
-      break;
-    case 'favSongs':
-      $('.search-radio__select-page').on('click', changePage);
-      $('.favourite-radio__page').on('click', showFavPosts);
-      $('.post-item__img').on('click', showModal);
-      $('.post-item__fav').on('click', addPostToFav);
-      break;
-    case 'favAlbums':
-      $('.search-radio__select-page').on('click', changePage);
-      $('.favourite-radio__page').on('click', showFavPosts);
-      $('.post-item__img').on('click', showModal);
-      $('.post-item__fav').on('click', addPostToFav);
-      break;
-    case 'favArtists':
-      $('.search-radio__select-page').on('click', changePage);
-      $('.favourite-radio__page').on('click', showFavPosts);
-      $('.post-item__fav').on('click', addPostToFav);
-      break;
-    case 'favVideos':
-      $('.search-radio__select-page').on('click', changePage);
-      $('.favourite-radio__page').on('click', showFavPosts);
-      $('.post-item__vid').on('click', showModal);
-      $('.post-item__fav').on('click', addPostToFav);
+      switch (status.postType) {
+        case 'favSongs':
+          $('.post-item__img').on('click', showModal);
+          $('.post-item__fav').on('click', addPostToFav);
+          break;
+        case 'favAlbums':
+          $('.post-item__img').on('click', showModal);
+          $('.post-item__fav').on('click', addPostToFav);
+          break;
+        case 'favArtists':
+          $('.post-item__fav').on('click', addPostToFav);
+          break;
+        case 'favVideos':
+          $('.post-item__vid').on('click', showModal);
+          $('.post-item__fav').on('click', addPostToFav);
+          break;
+        default:
+          break;
+      }
       break;
   }
 };
