@@ -323,6 +323,13 @@ input:checked + .slider:before {
   padding: 20px;
   background-color: rgba(22, 199, 154, 0.1);
 }
+.fav-root {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--green);
+}
 
 /* Media querys styles */
 @media screen and (min-width: 1470px) {

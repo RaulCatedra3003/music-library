@@ -12,7 +12,7 @@ import { renderView } from '../views/renderviews';
 import { turnClickedCard } from '../views/turnclickedcard';
 import { favourite } from '../views/components/favourite';
 
-export const favPosts = {
+export let favPosts = {
   song: [],
   album: [],
   artist: [],
@@ -107,4 +107,28 @@ export const addPostToFav = e => {
     }
     localStorage.setItem('fav', JSON.stringify(favPosts));
   });
+};
+
+export const showFavPosts = e => {
+  const data = favPosts[$(e.target).data('type')];
+  console.log(data);
+  console.log($(e.target).val());
+  switch ($(e.target).val()) {
+    case 'song':
+      status.page = 'favSongs';
+      renderView(createList(data, postSong), '#favRoot');
+      break;
+    case 'album':
+      status.page = 'favAlbums';
+      renderView(createList(data, postAlbum), '#favRoot');
+      break;
+    case 'artist':
+      status.page = 'favArtists';
+      renderView(createList(data, postArtist), '#favRoot');
+      break;
+    case 'video':
+      status.page = 'favVideos';
+      renderView(createList(data, postVideo), '#favRoot');
+      break;
+  }
 };

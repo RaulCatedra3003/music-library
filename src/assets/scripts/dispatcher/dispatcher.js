@@ -4,6 +4,7 @@ import {
   addPostToFav,
   changePage,
   deletePosts,
+  showFavPosts,
   showModal,
 } from '../store/store';
 import { showFilterOptions } from '../views/showfilteroptions';
@@ -79,6 +80,30 @@ export const addEventListeners = status => {
       break;
     case 'favourites':
       $('.search-radio__select-page').on('click', changePage);
+      $('.favourite-radio__page').on('click', showFavPosts);
+      break;
+    case 'favSongs':
+      $('.search-radio__select-page').on('click', changePage);
+      $('.favourite-radio__page').on('click', showFavPosts);
+      $('.post-item__img').on('click', showModal);
+      $('.post-item__fav').on('click', addPostToFav);
+      break;
+    case 'favAlbums':
+      $('.search-radio__select-page').on('click', changePage);
+      $('.favourite-radio__page').on('click', showFavPosts);
+      $('.post-item__img').on('click', showModal);
+      $('.post-item__fav').on('click', addPostToFav);
+      break;
+    case 'favArtists':
+      $('.search-radio__select-page').on('click', changePage);
+      $('.favourite-radio__page').on('click', showFavPosts);
+      $('.post-item__fav').on('click', addPostToFav);
+      break;
+    case 'favVideos':
+      $('.search-radio__select-page').on('click', changePage);
+      $('.favourite-radio__page').on('click', showFavPosts);
+      $('.post-item__vid').on('click', showModal);
+      $('.post-item__fav').on('click', addPostToFav);
       break;
   }
 };
