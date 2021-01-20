@@ -28,8 +28,9 @@ export const home = () => {
   </section>
   <section class="main-content">
     <section class="content" id="content"></section>
-    <section class="fav"></section>
   </section>`;
 
   return template;
 };
+
+/* <section class="fav"></section> */

@@ -32,11 +32,11 @@ export const postSong = ({
         </section>
       </section>
       <section class="post-item__back">
-        <p class="post-item__genre">Genre: ${primaryGenreName}</p>
-        <p class="post-item__length">Duration: ${durationMin}:${
+        <p class="post-item__genre"><span>Genre:</span> ${primaryGenreName}</p>
+        <p class="post-item__length"><span>Duration:</span> ${durationMin}:${
     durationSec < 10 ? '0' + durationSec : durationSec
   }</p>
-        <p class="post-item__release">Release: ${date}</p>
+        <p class="post-item__release"><span>Release:</span> ${date}</p>
         <audio src=${previewUrl} controls></audio>
       </section>
     </section>`;

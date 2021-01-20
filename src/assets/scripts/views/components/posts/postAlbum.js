@@ -23,9 +23,9 @@ export const postAlbum = ({
         </section>
       </section>
       <section class="post-item__back">
-        <p class="post-item__songs-number">Songs number: ${trackCount}</p>
-        <p class="post-item__release">Release: ${date}</p>
-        <p class="post-item__genre">Genre: ${primaryGenreName}</p>
+        <p class="post-item__songs-number"><span>Songs number:</span> ${trackCount}</p>
+        <p class="post-item__release"><span>Release:</span> ${date}</p>
+        <p class="post-item__genre"><span>Genre:</span> ${primaryGenreName}</p>
       </section>
     </section>`;
   return template;

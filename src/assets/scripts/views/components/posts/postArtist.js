@@ -5,7 +5,7 @@ export const postArtist = ({ artistName, primaryGenreName, artistLinkUrl }) => {
     <section class="post-item__front" >
       <section class="post-item__principal-data">
         <p class="post-item__name">${artistName}</p>
-        <p class="post-item__genre">Genre: ${primaryGenreName}</p>
+        <p class="post-item__genre"><span>Genre:</span> ${primaryGenreName}</p>
       </section>
       <section class="post-item__icons">
         <a class="post-item__link" href=${artistLinkUrl} target="_blank"><i class="bx bxs-music"></i></a>

@@ -39,6 +39,26 @@ video {
   left: -11px;
   bottom: -1px;
 }
+span {
+  color: var(--sea-blue);
+}
+
+/* Scroll bar styles */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #11698e5b;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #11698e5b;
+}
 
 /* Home styles */
 .header__title {
@@ -61,7 +81,6 @@ video {
 .content {
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid black;
   align-items: center;
   justify-content: center;
   background-color: var(--green);
@@ -69,7 +88,6 @@ video {
 .fav {
   display: flex;
   flex-direction: row;
-  border: 1px solid black;
   padding: 20px;
 }
 
@@ -110,16 +128,16 @@ video {
   font-weight: bold;
   overflow-wrap: break-word;
   max-height: 20px;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 .post-item__artist {
   margin: 3px 0;
   color: var(--sea-blue);
   max-height: 20px;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 .post-item__overflow-data {
-  overflow: scroll;
+  overflow-y: scroll;
   max-height: 30px;
   margin-top: 5px;
 }
@@ -167,3 +185,12 @@ video {
 }
 
 /* Media querys styles */
+@media screen and (min-width: 1470px) {
+  .content {
+    width: 1468px;
+  }
+  .main-content {
+    display: flex;
+    justify-content: center;
+  }
+}
