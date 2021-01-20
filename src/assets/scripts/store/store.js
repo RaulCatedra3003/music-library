@@ -1,8 +1,8 @@
 import { status } from '../actions/actions';
 import { getCountries, getItems } from '../API-logic/get';
-import { createList, createUrl } from '../helpers/helpers';
+import { createList, createUrl, getFav } from '../helpers/helpers';
 import { home } from '../views/components/home';
-import { search } from '../views/components/search'
+import { search } from '../views/components/search';
 import { option } from '../views/components/option';
 import { postAlbum } from '../views/components/posts/postAlbum';
 import { postArtist } from '../views/components/posts/postArtist';
@@ -12,25 +12,33 @@ import { renderView } from '../views/renderviews';
 import { turnClickedCard } from '../views/turnclickedcard';
 import { favourite } from '../views/components/favourite';
 
-export const homeApp = () => {
-  renderView(home);
+export const favPosts = {
+  song: [],
+  album: [],
+  artist: [],
+  video: [],
 };
 
-export const changePage = (e) =>{
-  switch($(e.target).val()){
-    case "search":
-      status.page = "search";
-      renderView(search, "#contentRoot");
+export const homeApp = () => {
+  renderView(home);
+  getFav();
+};
+
+export const changePage = e => {
+  switch ($(e.target).val()) {
+    case 'search':
+      status.page = 'search';
+      renderView(search, '#contentRoot');
       getCountries().done(data => {
         renderView(createList(data, option), '#countriesSelect');
       });
       break;
-    case "favourite":
-      status.page = "favourites";
-      renderView(favourite, "#contentRoot");
+    case 'favourite':
+      status.page = 'favourites';
+      renderView(favourite, '#contentRoot');
       break;
   }
-}
+};
 export const searchItem = () => {
   getItems(createUrl())
     .done(data => {
@@ -50,6 +58,7 @@ export const searchItem = () => {
           );
           break;
         case 'musicArtist':
+          status.page = 'artists';
           renderView(
             createList(JSON.parse(data).results, postArtist),
             '#content',
@@ -77,4 +86,25 @@ export const deletePosts = () => {
 export const showModal = e => {
   e.preventDefault();
   turnClickedCard(e);
+};
+
+export const addPostToFav = e => {
+  e.preventDefault();
+  getItems(`lookup?id=${$(e.target).data('id')}`).done(data => {
+    let exist = false;
+    const object = JSON.parse(data).results[0];
+    for (let i = 0; i < favPosts[$(e.target).data('type')].length; i++) {
+      if (
+        JSON.stringify(favPosts[$(e.target).data('type')][i]) ===
+        JSON.stringify(object)
+      ) {
+        exist = true;
+        favPosts[$(e.target).data('type')].splice(i, 1);
+      }
+    }
+    if (!exist) {
+      favPosts[$(e.target).data('type')].push(object);
+    }
+    localStorage.setItem('fav', JSON.stringify(favPosts));
+  });
 };

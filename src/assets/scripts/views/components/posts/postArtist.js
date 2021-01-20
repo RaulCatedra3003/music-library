@@ -1,4 +1,9 @@
-export const postArtist = ({ artistName, primaryGenreName, artistLinkUrl }) => {
+export const postArtist = ({
+  artistName,
+  primaryGenreName,
+  artistLinkUrl,
+  artistId,
+}) => {
   const template = `
   <section class="post-item">
   <section class="post-item__img" style="background-image: url('/src/assets/img/artist.jpg')"></section>
@@ -9,7 +14,7 @@ export const postArtist = ({ artistName, primaryGenreName, artistLinkUrl }) => {
       </section>
       <section class="post-item__icons">
         <a class="post-item__link" href=${artistLinkUrl} target="_blank"><i class="bx bxs-music"></i></a>
-        <button class="post-item__fav bx bx-star"></button>
+        <button class="post-item__fav bx bx-star" data-type="artist" data-id="${artistId}"></button>
       </section>
     </section>
   </section>`;

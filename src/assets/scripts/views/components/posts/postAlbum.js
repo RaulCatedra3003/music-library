@@ -7,6 +7,7 @@ export const postAlbum = ({
   trackCount,
   releaseDate,
   primaryGenreName,
+  collectionId,
 }) => {
   const date = releaseDate.split('T')[0];
   const template = `
@@ -19,7 +20,7 @@ export const postAlbum = ({
           <p class="post-item__price">${collectionPrice} ${currency}</p>
         </section>
         <section class="post-item__icons">
-          <button class="post-item__fav bx bx-star"></button>
+          <button class="post-item__fav bx bx-star" data-type="album" data-id="${collectionId}"></button>
         </section>
       </section>
       <section class="post-item__back">

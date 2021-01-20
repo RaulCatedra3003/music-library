@@ -9,7 +9,7 @@ export const getCountries = () => {
 
 export const getItems = url => {
   var settings = {
-    url: `https://itunes.apple.com/search${url}`,
+    url: `https://itunes.apple.com/${url}`,
     method: 'GET',
   };
 

@@ -10,6 +10,7 @@ export const postSong = ({
   primaryGenreName,
   trackViewUrl,
   previewUrl,
+  trackId,
 }) => {
   const date = releaseDate.split('T')[0];
   const durationMin = (trackTimeMillis / 60000).toFixed(0);
@@ -27,7 +28,7 @@ export const postSong = ({
           </section>
           <section class="post-item__icons">
             <a class="post-item__link" href=${trackViewUrl} target="_blank"><i class="bx bxs-music"></i></a>
-            <button class="post-item__fav bx bx-star"></button>
+            <button class="post-item__fav bx bx-star" data-type="song" data-id="${trackId}"></button>
           </section>
         </section>
       </section>

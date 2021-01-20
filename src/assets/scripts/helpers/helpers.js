@@ -1,4 +1,4 @@
-import { searchItem } from '../store/store';
+import { searchItem, favPosts } from '../store/store';
 
 export const createList = (data, component) => {
   const fragment = $(document.createDocumentFragment());
@@ -9,7 +9,7 @@ export const createList = (data, component) => {
 };
 
 export const createUrl = () => {
-  let url = `?term=${$('#nameToSearchInput').val()}&entity=${$(
+  let url = `search?term=${$('#nameToSearchInput').val()}&entity=${$(
     '#searchBarSelect',
   ).val()}`;
   if ($('#countryCheckbox').prop('checked')) {
@@ -35,4 +35,12 @@ export const stopAudio = () => {
   $('video').each(function () {
     this.pause();
   });
+};
+
+export const getFav = () => {
+  if (localStorage.getItem('fav') === null) {
+    localStorage.setItem('fav', JSON.stringify(favPosts));
+  } else {
+    favPosts = JSON.parse(localStorage.getItem('fav'));
+  }
 };
