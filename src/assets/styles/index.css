@@ -126,10 +126,9 @@ input, select{
   width: 150px;
   text-align-last: center;
   margin: 4px;
-  display: none;
 }
 #limitNumber{
-  width: 25px;
+  width: 50px;
   text-align: center;
 }
 .main-content {
