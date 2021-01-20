@@ -16,6 +16,7 @@ body {
 button {
   min-width: 44px;
   min-height: 44px;
+  cursor: pointer;
 }
 a {
   min-width: 44px;
@@ -24,6 +25,7 @@ a {
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  cursor: pointer;
 }
 audio {
   width: 110px;
@@ -42,6 +44,9 @@ video {
 }
 span {
   color: var(--sea-blue);
+}
+input{
+  cursor: pointer;
 }
 
 /* Scroll bar styles */
@@ -67,6 +72,7 @@ span {
   font-size: 28px;
   color: var(--white);
   background-color: var(--sea-blue);
+  text-align: left;
 }
 .searchRadio{
   margin: 5px;
@@ -75,27 +81,23 @@ input[type='radio']:after {
   width: 15px;
   height: 15px;
   border-radius: 15px;
-  /*top: -2px;*/
   left: -1px;
   position: relative;
   background-color: #d1d3d1;
   content: '';
   display: inline-block;
   visibility: visible;
-  /*border: 2px solid white;*/
 }
 input[type='radio']:checked:after {
   width: 15px;
   height: 15px;
   border-radius: 15px;
-  /*top: -2px;*/
   left: -1px;
   position: relative;
   background-color: var(--marine-blue);
   content: '';
   display: inline-block;
   visibility: visible;
-  /*border: 2px solid white;*/
 }
 .searchBar {
   padding: 20px;
@@ -137,7 +139,6 @@ input, select{
 .content {
   display: flex;
   flex-wrap: wrap;
-  /*border: 1px solid black;*/
   align-items: center;
   justify-content: center;
   background-color: var(--green);
@@ -145,7 +146,6 @@ input, select{
 .fav {
   display: flex;
   flex-direction: row;
-  /*border: 1px solid black;*/
   padding: 20px;
   display: none;
 }
@@ -169,12 +169,14 @@ input, select{
   width: 100px;
   margin: 12px 0 5px 0;
   border-radius: 10px;
+  cursor: pointer;
 }
 .post-item__vid {
   width: 100px;
   height: 100px;
   margin: 12px 0 5px 0;
   border-radius: 10px;
+  cursor: pointer;
 }
 .post-item__principal-data {
   text-align: left;
