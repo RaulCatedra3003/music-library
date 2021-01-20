@@ -126,10 +126,9 @@ input, select{
   width: 150px;
   text-align-last: center;
   margin: 4px;
-  display: none;
 }
 #limitNumber{
-  width: 25px;
+  width: 50px;
   text-align: center;
 }
 .main-content {
@@ -138,6 +137,7 @@ input, select{
 .content {
   display: flex;
   flex-wrap: wrap;
+  /*border: 1px solid black;*/
   align-items: center;
   justify-content: center;
   background-color: var(--green);
@@ -145,6 +145,7 @@ input, select{
 .fav {
   display: flex;
   flex-direction: row;
+  /*border: 1px solid black;*/
   padding: 20px;
   display: none;
 }

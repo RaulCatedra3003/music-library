@@ -2,6 +2,7 @@ import { status } from '../actions/actions';
 import { getCountries, getItems } from '../API-logic/get';
 import { createList, createUrl } from '../helpers/helpers';
 import { home } from '../views/components/home';
+import { search } from '../views/components/search'
 import { option } from '../views/components/option';
 import { postAlbum } from '../views/components/posts/postAlbum';
 import { postArtist } from '../views/components/posts/postArtist';
@@ -12,11 +13,21 @@ import { turnClickedCard } from '../views/turnclickedcard';
 
 export const homeApp = () => {
   renderView(home);
-  getCountries().done(data => {
-    renderView(createList(data, option), '#countriesSelect');
-  });
 };
 
+export const changePage = (e) =>{
+  switch($(e.target).val()){
+    case "search":
+      status.page = "search";
+      renderView(search, "#contentRoot");
+      getCountries().done(data => {
+        renderView(createList(data, option), '#countriesSelect');
+      });
+      break;
+    case "favourite":
+      break;
+  }
+}
 export const searchItem = () => {
   getItems(createUrl())
     .done(data => {
