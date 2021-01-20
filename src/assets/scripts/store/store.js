@@ -106,14 +106,15 @@ export const addPostToFav = e => {
       favPosts[$(e.target).data('type')].push(object);
     }
     localStorage.setItem('fav', JSON.stringify(favPosts));
+    if (status.page.includes('fav')) {
+      showFavPosts(e);
+    }
   });
 };
 
 export const showFavPosts = e => {
   const data = favPosts[$(e.target).data('type')];
-  console.log(data);
-  console.log($(e.target).val());
-  switch ($(e.target).val()) {
+  switch ($(e.target).data('type')) {
     case 'song':
       status.page = 'favSongs';
       renderView(createList(data, postSong), '#favRoot');

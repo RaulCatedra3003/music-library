@@ -329,6 +329,7 @@ input:checked + .slider:before {
   align-items: center;
   justify-content: center;
   background-color: var(--green);
+  font-size: 22px;
 }
 
 /* Media querys styles */
