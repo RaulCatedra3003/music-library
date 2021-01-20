@@ -1,6 +1,5 @@
 import { status } from '../actions/actions';
 import { getCountries, getItems } from '../API-logic/get';
-import { addEventListeners } from '../dispatcher/dispatcher';
 import { createList, createUrl } from '../helpers/helpers';
 import { home } from '../views/components/home';
 import { option } from '../views/components/option';
@@ -30,6 +29,7 @@ export const searchItem = () => {
           );
           break;
         case 'album':
+          status.page = 'albums';
           renderView(
             createList(JSON.parse(data).results, postAlbum),
             '#content',
@@ -42,6 +42,7 @@ export const searchItem = () => {
           );
           break;
         case 'musicVideo':
+          status.page = 'videos';
           renderView(
             createList(JSON.parse(data).results, postVideo),
             '#content',

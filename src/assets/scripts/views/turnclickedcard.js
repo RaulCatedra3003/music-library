@@ -1,3 +1,4 @@
+import { stopAudio } from '../helpers/helpers';
 import { turnBackedCards } from './turnbackedcards';
 
 export const turnClickedCard = e => {
@@ -16,6 +17,7 @@ export const turnClickedCard = e => {
       parent.children('.post-item__back').fadeIn();
       break;
     case 'back':
+      stopAudio();
       parent.data('position', 'front');
       parent.css('transform', '');
       target.css('transform', '');

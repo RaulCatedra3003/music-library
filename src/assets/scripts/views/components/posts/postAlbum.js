@@ -8,16 +8,25 @@ export const postAlbum = ({
   releaseDate,
   primaryGenreName,
 }) => {
+  const date = releaseDate.split('T')[0];
   const template = `
-    <section class="post-item">
+    <section class="post-item" data-position="front">
       <section class="post-item__img" style="background-image: url(${artworkUrl100})"></section>
-      <p class="post-item__name">name: ${collectionName}</p>
-      <p class="post-item__artist">artist: ${artistName}</p>
-      <p class="post-item__price">price: ${collectionPrice} ${currency}</p>
-      <p class="post-item__songs-number">Number of songs: ${trackCount}</p>
-      <p class="post-item__release">Release date: ${releaseDate}</p>
-      <p class="post-item__genre">Genre: ${primaryGenreName}</p>
-      <button class="post-item__fav"></button>
+      <section class="post-item__front" >
+        <section class="post-item__principal-data">
+          <p class="post-item__name">${collectionName}</p>
+          <p class="post-item__artist">${artistName}</p>
+          <p class="post-item__price">${collectionPrice} ${currency}</p>
+        </section>
+        <section class="post-item__icons">
+          <button class="post-item__fav bx bx-star"></button>
+        </section>
+      </section>
+      <section class="post-item__back">
+        <p class="post-item__songs-number">Songs number: ${trackCount}</p>
+        <p class="post-item__release">Release: ${date}</p>
+        <p class="post-item__genre">Genre: ${primaryGenreName}</p>
+      </section>
     </section>`;
   return template;
 };

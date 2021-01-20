@@ -27,7 +27,10 @@ a {
 audio {
   width: 110px;
   border-radius: 10px;
-  background-color: transparent;
+  background-color: var(--white);
+  margin-top: 14px;
+  position: relative;
+  left: -7px;
 }
 
 /* Home styles */
@@ -83,6 +86,12 @@ audio {
   margin: 12px 0 5px 0;
   border-radius: 10px;
 }
+.post-item__vid {
+  width: 100px;
+  height: 100px;
+  margin: 12px 0 5px 0;
+  border-radius: 10px;
+}
 .post-item__principal-data {
   text-align: left;
   width: 100px;
@@ -122,6 +131,7 @@ audio {
   color: var(--sea-blue);
 }
 .post-item__icons {
+  width: 100px;
   position: absolute;
   bottom: 2px;
   display: flex;
@@ -131,17 +141,22 @@ audio {
 .post-item__back {
   display: none;
   transform: rotateY(180deg);
-  position: absolute;
-  bottom: 2px;
+  width: 100px;
 }
 .post-item__genre,
 .post-item__length,
-.post-item__release {
+.post-item__release,
+.post-item__songs-number {
   text-align: left;
   margin: 5px 0;
 }
 .post-item__play {
   font-size: 3em;
+}
+.post-item__back-album {
+  display: none;
+  position: relative;
+  transform: rotateY(180deg);
 }
 
 /* Media querys styles */

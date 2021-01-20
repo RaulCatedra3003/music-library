@@ -1,4 +1,3 @@
-import { status } from '../actions/actions';
 import { searchItem } from '../store/store';
 
 export const createList = (data, component) => {
@@ -27,4 +26,10 @@ export const createUrl = () => {
 
 export const goSearch = () => {
   searchItem();
+};
+
+export const stopAudio = () => {
+  $('audio').each(function () {
+    this.pause();
+  });
 };
