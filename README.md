@@ -39,5 +39,5 @@ npm run start
 
 ## Authors ✒️
 
-* **Andrés Auais** - [villanuevand](https://github.com/andresauais)
+* **Andrés Auais** - [andresauais](https://github.com/andresauais)
 * **Raúl Cátedra** - [RaulCatedra3003](https://github.com/RaulCatedra3003)
