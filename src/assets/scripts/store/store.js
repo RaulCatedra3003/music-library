@@ -105,7 +105,7 @@ export const addPostToFav = e => {
       favPosts[$(e.target).data('type')].push(object);
     }
     localStorage.setItem('fav', JSON.stringify(favPosts));
-    if (status.page.includes('fav')) {
+    if (status.postType.includes('fav')) {
       showFavPosts(e);
     }
   });
