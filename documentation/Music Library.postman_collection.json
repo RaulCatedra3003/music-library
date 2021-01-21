@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "222e3b1a-ecf2-4507-8803-fec5c2ac1f22",
+		"name": "Music Library",
+		"description": "To use the API is important to know the parameter key you want to use.\r\n\r\nThe root URL is:\r\nhttps://itunes.apple.com/\r\n\r\nIf you want to make a search you need the search key after the root URL, then you need to construct a parameter key and value pair, you must concatenate each parameter key with an equal sign (=) and a value string. For example: key1=value1. To create a string of parameter key and value pairs, you must concatenate each pair using an ampersand (&). For example:\r\n\r\nkey1=value1&key2=value2&key3=value3\r\n\r\nIf you want to make a search based on id, the first parameter after the root URL is lookup, then you need to construct a parameter key id and pair it (=) whith one of the id you have previously.\r\n\r\nFor mor API documentation you can go to: https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/.\r\n\r\n\r\n\r\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://www.liferay.com/api/jsonws/country/get-countries/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.liferay.com/api/jsonws/country/get-countries/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"liferay",
+						"com"
+					],
+					"path": [
+						"api",
+						"jsonws",
+						"country",
+						"get-countries",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://itunes.apple.com/search?term=the weeknd&entity=song",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://itunes.apple.com/search?term=the weeknd&entity=song",
+					"protocol": "https",
+					"host": [
+						"itunes",
+						"apple",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "term",
+							"value": "the weeknd"
+						},
+						{
+							"key": "entity",
+							"value": "song"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://itunes.apple.com/search?term=the weeknd&entity=song",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://itunes.apple.com/search?term=the weeknd&entity=musicArtist",
+					"protocol": "https",
+					"host": [
+						"itunes",
+						"apple",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "term",
+							"value": "the weeknd"
+						},
+						{
+							"key": "entity",
+							"value": "musicArtist"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://itunes.apple.com/search?term=the weeknd&entity=song",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://itunes.apple.com/search?term=the weeknd&entity=album",
+					"protocol": "https",
+					"host": [
+						"itunes",
+						"apple",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "term",
+							"value": "the weeknd"
+						},
+						{
+							"key": "entity",
+							"value": "album"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://itunes.apple.com/search?term=the weeknd&entity=song",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://itunes.apple.com/search?term=the weeknd&entity=musicVideo",
+					"protocol": "https",
+					"host": [
+						"itunes",
+						"apple",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "term",
+							"value": "the weeknd"
+						},
+						{
+							"key": "entity",
+							"value": "musicVideo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://itunes.apple.com/lookup?id=284733530",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://itunes.apple.com/lookup?id=284733530",
+					"protocol": "https",
+					"host": [
+						"itunes",
+						"apple",
+						"com"
+					],
+					"path": [
+						"lookup"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "284733530"
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
